@@ -1,4 +1,10 @@
 pandas
 numpy
+ipykernel 
+matplotlib
+seaborn
+scikit-learn
+flask
 
--e .
+
+# -e .
