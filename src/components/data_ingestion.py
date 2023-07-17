@@ -42,4 +42,4 @@ class DataIngestion:
 
         except Exception as e:
             logging.info("Exception occured at Data Ingestion Stage")
-            raise CustomException(e,sys)
+            raise CustomException(e,sys.exc_info())

@@ -105,12 +105,21 @@ class DataTransformation:
 
             train_arr = np.c_[input_feature_train_arr,np.array(target_feature_train_df)]
             test_arr = np.c_[input_feature_test_arr,np.array(target_feature_test_df)]
+            
+            logging.info("Transforming Train and Test Data Completed")
+            logging.info(f'Train Dataframe Head :\n{train_arr[:,:5]}')
+            logging.info(f'Test Dataframe Head :\n{test_arr[:,:5]}')
 
             save_object(self.data_transformation_config.preprocessor_obj_file_path, preprocessing_obj)
 
             logging.info('Appyling  preprocessing Train and Test data Completed ')
 
-            return (train_arr,test_arr, self.data_transformation_config.preprocessor_obj_file_path)
+            return(
+                train_arr,
+                test_arr, 
+                self.data_transformation_config.preprocessor_obj_file_path
+                )
 
         except Exception as e:
             logging.info("Exception occured at Data Transformation Stage")
+            raise CustomException(e,sys.exc_info())
