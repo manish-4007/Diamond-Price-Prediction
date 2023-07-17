@@ -13,7 +13,7 @@ from sklearn.model_selection import train_test_split
 class DataIngestionConfig:
     train_data_path = os.path.join("artifacts","train.csv")
     test_data_path = os.path.join("artifacts","test.csv")
-    raw_data_path = os.path.join("artifacts","rae.csv")
+    raw_data_path = os.path.join("artifacts","raw.csv")
 
 #Create Data Ingestion
 class DataIngestion:
